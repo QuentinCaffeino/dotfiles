@@ -18,10 +18,12 @@ function main {
 		cp "$RC_PATH" "$TMP_RC_PATH"
 
 		cat > "$RC_PATH" <<EOF
+
 # Source global definitions
 if [ -f $GLOBAL_RC_PATH ]; then
 	. $GLOBAL_RC_PATH
 fi
+
 EOF
 
 		cat "$TMP_RC_PATH" >> "$RC_PATH"

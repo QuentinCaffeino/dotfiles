@@ -10,6 +10,7 @@ function main {
 	if [[ $(grep -q ${RCD_PATH} ${RC_PATH}; printf $?) != 0 ]]; then
 		echo 'current bashrc does not source user specific aliases and functions, appending...'
 		cat >> "$RC_PATH" <<EOF
+
 # User specific aliases and functions
 if [ -d ~/.bashrc.d ]; then
 	for rc in ~/.bashrc.d/*; do
@@ -20,6 +21,7 @@ if [ -d ~/.bashrc.d ]; then
 fi
 
 unset rc
+
 EOF
 	fi
 }
