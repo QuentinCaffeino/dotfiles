@@ -19,6 +19,7 @@ function main {
 
 		cat > "$RC_PATH" <<EOF
 
+# ### Inserted by chezmoi
 # Source global definitions
 if [ -f $GLOBAL_RC_PATH ]; then
 	. $GLOBAL_RC_PATH

@@ -11,16 +11,17 @@ function main {
 		echo 'current bashrc does not source user specific aliases and functions, appending...'
 		cat >> "$RC_PATH" <<EOF
 
+# ### Inserted by chezmoi ###
 # User specific aliases and functions
-if [ -d ~/.bashrc.d ]; then
-	for rc in ~/.bashrc.d/*; do
+if [ -d $RCD_PATH ]; then
+	for rc in $RCD_PATH/*; do
 		if [ -f "\$rc" ]; then
 			. "\$rc"
 		fi
 	done
-fi
 
-unset rc
+	unset rc
+fi
 
 EOF
 	fi
